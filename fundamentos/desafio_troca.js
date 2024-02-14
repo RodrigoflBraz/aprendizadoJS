@@ -7,3 +7,4 @@ let b = 15;
 
 console.log(a);
 console.log(b);
+ 
