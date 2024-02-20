@@ -69,5 +69,13 @@ const elevaBaseAoExpoente = function(base, expoente){
 
     return base ** expoente
 }
-
 console.log(elevaBaseAoExpoente(2, 3))
+
+
+// ----------------------------------------
+const arrowElevaBaseAoExpoente = (base, expoente) => base ** expoente;
+console.log(arrowElevaBaseAoExpoente(5, 3))
+
+
+
+ 
