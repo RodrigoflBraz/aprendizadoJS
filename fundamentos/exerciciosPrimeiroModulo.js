@@ -16,7 +16,7 @@ const operations = function(a, b){
 }
 
 
-operations(5, 0)
+//operations(5, 0)
 
 
 
@@ -47,7 +47,27 @@ const classificaTriangulos = function(ladoA, ladoB, ladoC){
     }
 }
 
+/*
 classificaTriangulos(2,3,5)
 classificaTriangulos(1,3,3)
 classificaTriangulos(2,2,2)
 classificaTriangulos(2,3,"claudio")
+*/
+
+
+/*
+
+03) Crie uma função que recebe dois parâmetros, base e expoente, e retorne a base elevada ao expoente.
+
+
+*/
+
+const elevaBaseAoExpoente = function(base, expoente){
+    if(isNaN(base) || isNaN(expoente)){
+        throw new Error("Digite valores válidos!!");
+    }
+
+    return base ** expoente
+}
+
+console.log(elevaBaseAoExpoente(2, 3))
