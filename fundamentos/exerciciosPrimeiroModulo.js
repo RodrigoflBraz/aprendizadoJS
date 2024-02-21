@@ -357,7 +357,7 @@ novo salário. Use a estrutura switch e faça um caso default que indique que o 
 */
 
 
-function calcularNovoSalario(plano, salarioAtual) {
+const calcularNovoSalario = function (plano, salarioAtual) {
     let novoSalario;
 
     switch (plano) {
@@ -382,3 +382,85 @@ calcularNovoSalario('A', 1000);
 
 
 
+
+/*
+14) Crie um programa para informar quais e quantas notas são necessárias para entregar o mínimo de cédulas
+para um determinado valor informado pelo usuário considerando notas de R$ 100, R$ 50, R$ 10 e R$ 5 e R$ 1.
+Seu programa deve mostrar apenas as notas utilizadas. Por exemplo, ao solicitar R$18, o programa deve
+informar apenas a seguinte informação (note que não foram exibidas informações sobre as demais cédulas): 1
+nota(s) de R$ 10. 1 nota(s) de R$ 5. 3 nota(s) de R$ 1.
+*/
+
+
+const calcularQuantidadeNota100 =  function (valor){
+    if(valor / 100 > 0){
+        return [true, Math.floor((valor / 100))]
+    }
+    else{return [false]}
+}
+
+ 
+const calcularQuantidadeNota50 =  function (valor){
+    if(valor / 50 > 0){
+        return [true, Math.floor(valor / 50)]
+    }
+    else{return [false]}
+}
+
+const calcularQuantidadeNota10 =  function (valor){
+    if(valor / 10 > 0){
+        return [true, Math.floor(valor / 10)]
+    }
+    else{return [false]}
+}
+
+const calcularQuantidadeNota5 =  function (valor){
+    if(valor / 5 > 0){
+        return [true, Math.floor(valor / 5)]
+    }
+    else{return [false]}
+
+}
+
+
+
+
+const calcularTroco = function (valor){
+    let valor_atual = valor
+    var str_resultado = ''
+
+    let quantidade_notas_100 = calcularQuantidadeNota100(valor_atual)
+    if (quantidade_notas_100[0] && quantidade_notas_100[1] != 0){
+        valor_atual = valor_atual - (100 * quantidade_notas_100[1])
+        str_resultado = `${quantidade_notas_100[1]} nota(s) de R$ 100.`
+        console.log(str_resultado)
+    }
+
+    let quantidade_notas_50 = calcularQuantidadeNota50(valor_atual)
+    if (quantidade_notas_50[0] && quantidade_notas_50[1] != 0){
+        valor_atual = valor_atual - (50 * quantidade_notas_50[1])
+        str_resultado = `${quantidade_notas_50[1]} nota(s) de R$ 50.`
+        console.log(str_resultado)
+    }
+
+    let quantidade_notas_10 = calcularQuantidadeNota10(valor_atual)
+    if (quantidade_notas_10[0] && quantidade_notas_10[1] != 0){
+        valor_atual = valor_atual - (10 * quantidade_notas_10[1])
+        str_resultado = `${quantidade_notas_10[1]} nota(s) de R$ 10.`
+        console.log(str_resultado)
+    }
+
+    let quantidade_notas_5 = calcularQuantidadeNota5(valor_atual)
+    if (quantidade_notas_5[0] && quantidade_notas_5[1] != 0){
+        valor_atual = valor_atual - (5 * quantidade_notas_5[1])
+        str_resultado = `${quantidade_notas_5[1]} nota(s) de R$ 5.`
+        console.log(str_resultado)
+    }
+
+    if (valor_atual > 0){
+        str_resultado = `${valor_atual} nota(s) de R$ 1.`
+        console.log(str_resultado)
+    }
+}
+
+calcularTroco(376)
