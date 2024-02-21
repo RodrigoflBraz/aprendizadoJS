@@ -111,8 +111,39 @@ const formataDinheiro = function(valor){
     let valorDecimal = valor - valorInteiro
 
     let valor_formatado = 'R$ ' + valorInteiro.toString() + ',' + valorDecimal.toString().slice(2,4)
-    
+
     console.log(valor_formatado)
 }
 
 formataDinheiro(9677667676766.30000000000000004)
+
+
+/*
+
+06) Elabore duas funções que recebem três parâmetros: capital inicial, taxa de juros e tempo de aplicação. A
+primeira função retornará o montante da aplicação financeira sob o regime de juros simples e a segunda
+retornará o valor da aplicação sob o regime de juros compostos.
+
+*/
+
+const calcularJurosSimples = function (capitalInicial, taxaJurosMensal, tempoAplicacaoMeses) {
+    if(isNaN(capitalInicial) || isNaN(taxaJurosMensal) || isNaN(tempoAplicacaoMeses)){
+        throw new Error("Digite valores válidos!!")
+    }
+
+    return capitalInicial * taxaJurosMensal * tempoAplicacaoMeses
+}
+
+
+
+const calcularJurosCompostos = function (capitalInicial, taxaJurosMensal, tempoAplicacaoMeses) {
+    if(isNaN(capitalInicial) || isNaN(taxaJurosMensal) || isNaN(tempoAplicacaoMeses)){
+        throw new Error("Digite valores válidos!!")
+    }
+
+    return capitalInicial * ((taxaJurosMensal) ** tempoAplicacaoMeses)
+
+}
+
+console.log(calcularJurosSimples(1000, 1.2, 16))
+console.log(calcularJurosCompostos(1000, 1.2, 16))
