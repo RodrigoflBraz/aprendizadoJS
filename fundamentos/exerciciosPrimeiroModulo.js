@@ -214,7 +214,6 @@ const calculaRecords = function(stringRecordes){
         if(vetorDePontos[a] > maiorPontuacao){
             quantidadeRecordsBatidos ++
             maiorPontuacao = vetorDePontos[a]
-            console.log("Cheguei aqui a: ", a, "vetor: ", vetorDePontos[a], 'Maior: ', maiorPontuacao)
         }
 
         else if(vetorDePontos[a] < piorPontuacao){
@@ -231,4 +230,8 @@ const calculaRecords = function(stringRecordes){
 
 console.log(calculaRecords("10 20 20 8 25 3 0 30 1"))
 
+/*
 
+
+
+*/
