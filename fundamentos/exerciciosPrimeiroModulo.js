@@ -519,6 +519,8 @@ const definirSituacaoAluno = function(cod_aluno, nota1, nota2, nota3){
 
 let codigo_aluno = 0, nota1, nota2, nota3;
 
+
+/*
 import { createInterface } from 'readline';
 
 const rl = createInterface({
@@ -546,3 +548,24 @@ while(codigo_aluno > 0){
 
 rl.close();
 
+*/
+
+/*
+
+17) Crie um programa que imprima 11 vezes a frase " Hello World!" utilizando uma estrutura de repetição while
+
+*/
+
+let a = 0
+
+while(a < 11){
+    console.log(" Hello World!")
+    a++
+}
+
+
+/*
+
+18) Crie um programa que imprima 11 vezes a frase " Hello World!" utilizando uma estrutura de repetição while
+
+*/
