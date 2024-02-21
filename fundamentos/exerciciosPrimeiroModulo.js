@@ -566,6 +566,36 @@ while(a < 11){
 
 /*
 
-18) Crie um programa que imprima 11 vezes a frase " Hello World!" utilizando uma estrutura de repetição while
+18)  Fazer um programa para encontrar todos os pares entre 1 e 100.
 
 */
+
+let b = 1
+
+while(b < 101){
+    if(b % 2 === 0){
+        console.log(b)
+    }
+    b++
+}
+
+/*
+
+19)  Ler um vetor de números inteiros e imprimir quantos são pares e quantos são ímpares
+
+*/
+
+const definirQuantidadeParEImpar = function(vetor_inteiros){
+    let quantidade_par = 0;
+    let quantidade_impar = 0;
+
+    for (numero in vetor_inteiros){
+        if(numero % 2 === 0){quantidade_par ++}
+        
+        else {quantidade_impar ++}
+    }
+
+    console.log(`Esse vetor tinha: ${quantidade_par} de numeros pares, e: ${quantidade_impar} de numeros impares!`)
+}
+
+definirQuantidadeParEImpar([1, 2, 3, 4, 6, 7, 8, 2, 7, 8, 234, 55, 7])
