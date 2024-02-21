@@ -110,12 +110,12 @@ const formataDinheiro = function(valor){
     let valorInteiro = Math.floor(valor)
     let valorDecimal = valor - valorInteiro
 
-    let valor_formatado = 'R$ ' + valorInteiro.toString() + ',' + valorDecimal.toString().slice(2,4)
+    let valorFormatado = 'R$ ' + valorInteiro.toString() + ',' + valorDecimal.toString().slice(2,4)
 
-    console.log(valor_formatado)
+    return valorFormatado
 }
 
-formataDinheiro(9677667676766.30000000000000004)
+console.log(formataDinheiro(3555555555553.7000065609750000004))
 
 
 /*
@@ -147,3 +147,37 @@ const calcularJurosCompostos = function (capitalInicial, taxaJurosMensal, tempoA
 
 console.log(calcularJurosSimples(1000, 1.2, 16))
 console.log(calcularJurosCompostos(1000, 1.2, 16))
+
+
+
+/*
+07) Uma das vantagens da programação é a automatização de tarefas que não gostamos de realizar. Dito isto,
+elabore uma função cujo objetivo é resolver a fórmula de Bhaskara. Para isso, sua função deve receber três
+parâmetros, “ax2”, “bx” e “c”, de tal modo que na equação: 3x² - 5x + 12 os valores seriam respectivamente: 3,
+-5, 12. Como retorno deve ser passado um vetor que tem 2 valores um para cada possível resultado, mesmo
+que os resultados sejam iguais. Caso o delta seja negativo, retorne, ao invés do vetor, um string com a frase:
+“Delta é negativo”
+*/
+
+
+const calcularBhaskara = function(ax, bx, c){
+    if(isNaN(ax) || isNaN(bx) || isNaN(c)){
+        throw new Error("Digite valores válidos!!");
+    }
+
+    const delta = (bx ** 2) - 4 * ax * c
+    
+    if (delta < 0){
+        return "Delta é negativo"
+    }
+    
+
+    resultadoPositivo = ((bx * -1) + Math.sqrt(delta)) / (2* ax)
+    resultadoNegativo = ((bx * -1) - Math.sqrt(delta)) / (2* ax)
+
+    const resultados = [resultadoPositivo, resultadoNegativo]
+    return resultados
+
+}
+
+console.log(calcularBhaskara(3, 55, 2))
