@@ -260,3 +260,125 @@ const arredondaNotas = function(nota){
 }
 
 console.log(arredondaNotas(83))
+
+/*
+
+10) Crie uma função que verifica se um número inteiro passado como parêmetro é divisível por 3 e retorne true
+ou false.
+
+*/
+
+const divisivelPorTres = function(numero){
+    if (numero % 3 === 0){
+        return true
+    }
+    return false
+}
+
+console.log(divisivelPorTres(7))
+
+
+/*
+
+11) As regras para o cálculo dos anos bissextos são as seguintes:
+De 4 em 4 anos é ano bissexto;
+De 100 em 100 anos não é ano bissexto;
+De 400 em 400 anos é ano bissexto;
+Prevalecem as últimas regras sobre as primeiras.
+Partindo daí elabore uma função que recebe um ano e calcula se ele é ano bissexto, imprimindo no console a
+mensagem e retornando true ou false.
+
+*/
+
+const calcularAnoBissexto = function (ano){
+    if(ano % 400 === 0){
+        console.log('O ano é bissexto!!!!')
+        return true
+    }
+
+    else if(ano % 100 === 0){
+        console.log('O ano não é bissexto!!!!')
+        return false
+    }
+
+    else{
+
+        if(ano % 4 === 0){
+            console.log('O ano é bissexto!!!!')
+            return true
+        }
+
+        else{
+            console.log('O ano não é bissexto!!!!')
+            return false 
+        }
+    }
+
+}
+
+calcularAnoBissexto(2024)
+
+
+
+/*
+12) Faça um algoritmo que calcule o fatorial de um número.
+*/
+
+const calcularFatorial = function (numero){
+    
+    let fatorial = 1;
+
+    if (numero === 0 || numero ===1){ return fatorial }
+    else if(numero < 0){ throw new Error("Digite valores válidos!!") }
+
+    else{
+        for(let i = 1; i<= numero; i++){
+            fatorial = fatorial * i
+        }
+    }
+
+    return fatorial
+}
+
+console.log(calcularFatorial(5))
+
+
+
+
+/*
+13) Um funcionário irá receber um aumento de acordo com o seu plano de
+trabalho, de acordo com a tabela abaixo:
+Plano Aumento
+A 10%
+B 15%
+C 20%
+Faça uma função que leia o plano de trabalho e o salário atual de um funcionário e calcula e imprime o seu
+novo salário. Use a estrutura switch e faça um caso default que indique que o plano é inválido.
+*/
+
+
+function calcularNovoSalario(plano, salarioAtual) {
+    let novoSalario;
+
+    switch (plano) {
+        case 'A':
+            novoSalario = salarioAtual * 1.10;
+            break;
+        case 'B':
+            novoSalario = salarioAtual * 1.15;
+            break;
+        case 'C':
+            novoSalario = salarioAtual * 1.20;
+            break;
+        default:
+            console.log("Plano inválido");
+            return;
+    }
+
+    console.log(`Novo salário: R$ ${novoSalario.toFixed(2)}`);
+}
+
+calcularNovoSalario('A', 1000);
+
+
+
