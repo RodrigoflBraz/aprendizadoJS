@@ -422,9 +422,6 @@ const calcularQuantidadeNota5 =  function (valor){
 
 }
 
-
-
-
 const calcularTroco = function (valor){
     let valor_atual = valor
     var str_resultado = ''
@@ -464,3 +461,24 @@ const calcularTroco = function (valor){
 }
 
 calcularTroco(376)
+
+
+/*
+
+15) Criar uma função para calcular o valor a ser pago de anuidade de uma associação. A função recebe como
+parâmetro um inteiro que representa o mês (1 - janeiro, 2 - fevereiro…) que foi paga e o valor da anuidade. A
+anuidade deve ser paga no mês de janeiro. Por mês, é cobrado 5% de juros (sob o regime de juros
+compostos). O retorno deve ser o valor a ser pago para o respectivo mês escolhido.
+
+*/
+ 
+const calcularAnuidade = function (mes, valor) {
+    return calcularJurosCompostos(valor, 1.05, mes - 1)
+}
+
+console.log(calcularAnuidade(6, 1200))
+
+
+/*
+
+*/
