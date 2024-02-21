@@ -481,4 +481,68 @@ console.log(calcularAnuidade(6, 1200))
 
 /*
 
+16) Escreva um algoritmo que leia o código de um aluno e suas três notas. Calcule a média ponderada do
+aluno, considerando que o peso para a maior nota seja 4 e para as duas restantes, 3. Mostre o código do
+aluno, suas três notas, a média calculada e uma mensagem "APROVADO" se a média for maior ou igual a 5 e
+"REPROVADO" se a média for menor que 5. Repita a operação até que o código lido seja negativo.
+
 */
+
+const definirSituacaoAluno = function(cod_aluno, nota1, nota2, nota3){
+    
+    let media_aluno = 0
+    let notas_aluno = [nota1, nota2, nota3]
+    let maior_nota = Math.max(...notas_aluno)
+    let index_maior_nota = notas_aluno.indexOf(maior_nota)
+
+    for(let a = 0; a < notas_aluno.length; a++){
+        if(a === index_maior_nota){
+            media_aluno += notas_aluno[a] * 4
+        }
+        else{
+            media_aluno += notas_aluno[a] * 3
+        }
+    }
+
+    media_aluno = media_aluno/10
+
+    if (media_aluno > 5){
+        console.log(`O aluno de codigo: ${cod_aluno}, com notas: ${nota1} , ${nota2} , ${nota3}, média: ${media_aluno}, foi APROVADO!`)
+    }
+
+    else {
+        console.log(`O aluno de codigo: ${cod_aluno}, com notas: ${nota1} , ${nota2} , ${nota3}, média: ${media_aluno}, foi REPROVADO!`)
+    }
+
+}
+
+
+let codigo_aluno = 0, nota1, nota2, nota3;
+
+import { createInterface } from 'readline';
+
+const rl = createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+
+
+while(codigo_aluno > 0){
+    rl.question('Digite o código do aluno: ', (answer) => {
+        codigo_aluno = answer;
+    rl.question('Digite o valor 1: ', (answer) => {
+        nota1 = answer;
+    rl.question('Digite o valor 2: ', (answer) => {
+        nota2 = answer;
+    rl.question('Digite o valor 3: ', (answer) => {
+        nota3 = answer;
+    });
+    });
+    });
+    });
+    
+    definirSituacaoAluno(codigo_aluno, nota1, nota2, nota3)
+}   
+
+rl.close();
+
