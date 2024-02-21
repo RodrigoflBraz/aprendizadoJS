@@ -516,39 +516,7 @@ const definirSituacaoAluno = function(cod_aluno, nota1, nota2, nota3){
 
 }
 
-
-let codigo_aluno = 0, nota1, nota2, nota3;
-
-
-/*
-import { createInterface } from 'readline';
-
-const rl = createInterface({
-  input: process.stdin,
-  output: process.stdout
-});
-
-
-while(codigo_aluno > 0){
-    rl.question('Digite o código do aluno: ', (answer) => {
-        codigo_aluno = answer;
-    rl.question('Digite o valor 1: ', (answer) => {
-        nota1 = answer;
-    rl.question('Digite o valor 2: ', (answer) => {
-        nota2 = answer;
-    rl.question('Digite o valor 3: ', (answer) => {
-        nota3 = answer;
-    });
-    });
-    });
-    });
-    
-    definirSituacaoAluno(codigo_aluno, nota1, nota2, nota3)
-}   
-
-rl.close();
-
-*/
+definirSituacaoAluno(1, 3 , 4 ,5 )
 
 /*
 
@@ -589,7 +557,7 @@ const definirQuantidadeParEImpar = function(vetor_inteiros){
     let quantidade_par = 0;
     let quantidade_impar = 0;
 
-    for (numero in vetor_inteiros){
+    for (const numero of vetor_inteiros){
         if(numero % 2 === 0){quantidade_par ++}
         
         else {quantidade_impar ++}
@@ -599,3 +567,28 @@ const definirQuantidadeParEImpar = function(vetor_inteiros){
 }
 
 definirQuantidadeParEImpar([1, 2, 3, 4, 6, 7, 8, 2, 7, 8, 234, 55, 7])
+
+
+/*
+
+20)  Utilizando a estrutura de repetição for, faça uma função que percorra um vetor e conte quantos números
+deste vetor estão no intervalo [10,20] (repare que o intervalo é fechado, ou seja, inclui o 10 e o 20) e quantos
+deles estão fora do intervalo, escrevendo estas informações.
+
+*/
+
+const definirQuantidadesDeElementosNoIntervalo = function(vetor_numeros) {
+    
+    let quantidade_dentro = 0;
+    let quantidade_fora = 0;
+
+    for (const numero of vetor_numeros){
+        if (numero < 10 || numero > 20) {quantidade_fora ++}
+        else {quantidade_dentro ++}
+    }
+
+    console.log(`Esse vetor tinha: ${quantidade_dentro} de numeros dentro do intervalo, e: ${quantidade_fora} de numeros fora do intervalo!`)
+
+}
+
+definirQuantidadesDeElementosNoIntervalo([1, 2, 3, 4, 6, 7, 8, 2, 7, 8, 234, 55, 7])
