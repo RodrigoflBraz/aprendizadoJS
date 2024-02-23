@@ -557,7 +557,7 @@ const definirQuantidadeParEImpar = function(vetor_inteiros){
     let quantidade_par = 0;
     let quantidade_impar = 0;
 
-    for (const numero of vetor_inteiros){
+    for (let numero of vetor_inteiros){
         if(numero % 2 === 0){quantidade_par ++}
         
         else {quantidade_impar ++}
@@ -582,7 +582,7 @@ const definirQuantidadesDeElementosNoIntervalo = function(vetor_numeros) {
     let quantidade_dentro = 0;
     let quantidade_fora = 0;
 
-    for (const numero of vetor_numeros){
+    for (let numero of vetor_numeros){
         if (numero < 10 || numero > 20) {quantidade_fora ++}
         else {quantidade_dentro ++}
     }
@@ -592,3 +592,30 @@ const definirQuantidadesDeElementosNoIntervalo = function(vetor_numeros) {
 }
 
 definirQuantidadesDeElementosNoIntervalo([1, 2, 3, 4, 6, 7, 8, 2, 7, 8, 234, 55, 7])
+
+
+
+/*
+
+21)  Construa uma função que receberá duas Strings de tamanhos variados e que retornará True ou False caso
+todos os caracteres (independentemente de ser maiúsculo ou minúsculo) estejam contidos em ambas palavras.
+
+*/
+function extrairElementosUnicos(vetor) {
+    return vetor.filter((item, index) => vetor.indexOf(item) === index);
+}
+
+const compararStrings = function(string1, string2) {
+    let vetor_string1 = string1.toLowerCase().replace(/\s/g, '').split('').sort()
+    vetor_string1 = extrairElementosUnicos(vetor_string1)
+
+    let vetor_string2 = string2.toLowerCase().replace(/\s/g, '').split('').sort()
+    vetor_string2 = extrairElementosUnicos(vetor_string2)
+    
+    return  vetor_string1.every(elemento => vetor_string2.includes(elemento));
+
+
+}
+
+
+console.log(compararStrings('Ameixa', 'Ameixa Ameixa Ameixa'))
