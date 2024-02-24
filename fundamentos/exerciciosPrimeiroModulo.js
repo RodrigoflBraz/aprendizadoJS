@@ -629,8 +629,8 @@ console.log(compararStrings('gfhaaafghgfh', 'fghfghfhgfhfhfghgf'))
 */
 
 function criarProduto(nome, valor) {
-    return {nome_produto:  nome, 
-            valor_produto: valor, 
+    return {nome, 
+            valor, 
             desconto: 0.15}
 }
 
