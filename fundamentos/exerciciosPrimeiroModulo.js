@@ -638,3 +638,22 @@ const produto = criarProduto('Camiseta', 100)
 console.log(produto)
 
 
+/*
+
+23)  Criar uma função factory, que instancia objeto pessoa, com o método falar
+
+*/
+
+function criarPessoa(nome){
+    return{
+        nome,
+        falar(){
+            console.log(`Olá, eu sou o ${nome}`)
+        }
+       
+    }
+}
+
+const pessoa = criarPessoa('Rodrigão')
+
+pessoa.falar()
