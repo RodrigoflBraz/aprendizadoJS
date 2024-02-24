@@ -601,21 +601,40 @@ definirQuantidadesDeElementosNoIntervalo([1, 2, 3, 4, 6, 7, 8, 2, 7, 8, 234, 55,
 todos os caracteres (independentemente de ser maiúsculo ou minúsculo) estejam contidos em ambas palavras.
 
 */
+
+
 function extrairElementosUnicos(vetor) {
     return vetor.filter((item, index) => vetor.indexOf(item) === index);
+     
 }
 
 const compararStrings = function(string1, string2) {
-    let vetor_string1 = string1.toLowerCase().replace(/\s/g, '').split('').sort()
+    let vetor_string1 = string1.toLowerCase().replace(/\s/g, '').split('')
     vetor_string1 = extrairElementosUnicos(vetor_string1)
 
-    let vetor_string2 = string2.toLowerCase().replace(/\s/g, '').split('').sort()
+    let vetor_string2 = string2.toLowerCase().replace(/\s/g, '').split('')
     vetor_string2 = extrairElementosUnicos(vetor_string2)
-    
+
     return  vetor_string1.every(elemento => vetor_string2.includes(elemento));
 
 
 }
 
+console.log(compararStrings('gfhaaafghgfh', 'fghfghfhgfhfhfghgf'))
 
-console.log(compararStrings('Ameixa', 'Ameixa Ameixa Ameixa'))
+/*
+
+22)  Criar uma função factory, que instancia objeto produto, com nome e valor do produto sendo parâmentros, e o desconto fixo
+
+*/
+
+function criarProduto(nome, valor) {
+    return {nome_produto:  nome, 
+            valor_produto: valor, 
+            desconto: 0.15}
+}
+
+const produto = criarProduto('Camiseta', 100)
+console.log(produto)
+
+
