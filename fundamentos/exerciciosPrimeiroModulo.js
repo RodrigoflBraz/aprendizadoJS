@@ -644,16 +644,17 @@ console.log(produto)
 
 */
 
-function criarPessoa(nome){
-    return{
-        nome,
-        falar(){
-            console.log(`Olá, eu sou o ${nome}`)
-        }
-       
+function novaPessoa(nome){
+    this.nome = nome
+
+    this.falar = function() {
+        console.log(`Olá, eu sou o ${this.nome}!`)
     }
 }
 
-const pessoa = criarPessoa('Rodrigão')
-
+const pessoa = new novaPessoa('Rodrigão')
 pessoa.falar()
+pessoa.nome = 'Charlenne'
+pessoa.falar()
+
+
